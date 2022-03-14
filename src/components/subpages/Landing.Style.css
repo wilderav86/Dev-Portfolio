@@ -1,0 +1,28 @@
+.landing-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  border-bottom: 10px solid black;
+  color: rgb(228, 168, 208);
+}
+
+.backgroundImage {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.content {
+  display: flex;
+}
+
+.skills {
+  display: flex;
+  height: 30vh;
+  width: 60vw;
+}

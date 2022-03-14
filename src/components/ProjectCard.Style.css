@@ -1,0 +1,10 @@
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  display: flex;
+  width: 40%;
+  height: 50%;
+}

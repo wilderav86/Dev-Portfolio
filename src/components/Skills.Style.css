@@ -1,0 +1,38 @@
+.skills-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  height: auto;
+  width: 75%;
+  border-style: double;
+  background-color: rgb(228, 168, 208);
+  justify-self: flex-end;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  /* height: 75%;
+  width: 75%; */
+  border-style: double;
+}
+
+.icon {
+  justify-self: center;
+  height: 2.8rem;
+  width: 2.8rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .skills-container {
+    width: 40%;
+  }
+  .icon {
+    height: 4rem;
+    width: 4rem;
+  }
+}
