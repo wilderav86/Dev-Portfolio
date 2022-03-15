@@ -8,17 +8,9 @@
   border-bottom: 10px solid black;
 }
 
-.backgroundImage-dark {
+.backgroundImage {
   height: 100%;
   width: 100%;
   position: absolute;
   z-index: -1;
-}
-
-.backgroundImage-light {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: -1;
-  transform: rotate(180deg);
 }

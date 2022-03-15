@@ -19,7 +19,7 @@ const Projects = () => {
               gatsbyImageData(
                 quality: 50
                 aspectRatio: 1.5
-
+                formats: WEBP
                 placeholder: BLURRED
               )
             }

@@ -5,8 +5,8 @@
   align-items: center;
   height: auto;
   width: 75%;
-  border-style: double;
-  background-color: rgb(228, 168, 208);
+  border-radius: 15px;
+  background-color: rgb(228, 168, 208, 0.3);
   justify-self: flex-end;
 }
 
@@ -18,7 +18,6 @@
   align-items: center;
   /* height: 75%;
   width: 75%; */
-  border-style: double;
 }
 
 .icon {

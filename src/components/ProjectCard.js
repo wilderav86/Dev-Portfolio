@@ -43,30 +43,28 @@ const ProjectCard = () => {
 
     return (
       <Card
-        bg={lightTheme ? "light" : "dark"}
-        text={lightTheme ? "dark" : "light"}
+        bg={lightTheme ? "dark" : "light"}
+        text={lightTheme ? "light" : "dark"}
         key={id}
         className="project-card"
       >
-        <div>
-          <Card.Header as="h5">{title}</Card.Header>
-          <Card.Body>
-            <GatsbyImage image={projectImg} alt="project image" />
-            <div>
-              <Card.Text>{description}</Card.Text>
-            </div>
+        <Card.Header as="h5">{title}</Card.Header>
+        <Card.Body>
+          <GatsbyImage image={projectImg} alt="project image" />
+          <div>
+            <Card.Text>{description}</Card.Text>
+          </div>
 
-            <div className="button-container">
-              <IconContext.Provider value={{ size: 40 }}>
-                {lightTheme ? <BsFileCodeFill /> : <BsFileCode />}
-              </IconContext.Provider>
+          <div className="button-container">
+            <IconContext.Provider value={{ size: 40 }}>
+              {lightTheme ? <BsFileCodeFill /> : <BsFileCode />}
+            </IconContext.Provider>
 
-              <Button variant={lightTheme ? "outline-dark" : "outline-light"}>
-                View Site
-              </Button>
-            </div>
-          </Card.Body>
-        </div>
+            <Button variant={lightTheme ? "outline-light" : "outline-dark"}>
+              View Site
+            </Button>
+          </div>
+        </Card.Body>
       </Card>
     );
   });
