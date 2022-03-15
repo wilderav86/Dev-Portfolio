@@ -9,6 +9,6 @@
 .backgroundImage {
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: absolute !important;
   z-index: -1;
 }

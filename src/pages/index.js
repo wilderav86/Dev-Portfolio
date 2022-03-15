@@ -5,8 +5,9 @@ import About from "../components/subpages/About";
 import Contact from "../components/subpages/Contact";
 import Navigation from "../components/Navigation";
 import { ThemeContextProvider } from "../contexts/ThemeContext";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 import "../globalStyles.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const IndexPage = () => {
   return (
