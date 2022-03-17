@@ -46,6 +46,7 @@ const ProjectCard = () => {
         bg={lightTheme ? "dark" : "light"}
         text={lightTheme ? "light" : "dark"}
         key={id}
+        
         className="project-card"
       >
         <Card.Header as="h5">{title}</Card.Header>

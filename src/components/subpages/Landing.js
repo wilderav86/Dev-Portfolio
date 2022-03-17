@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { ThemeContext } from "../../contexts/ThemeContext";
-import Skills from "../Skills";
+import Socials from "../Socials";
 
 import "./Landing.Style.css";
 
@@ -23,11 +23,20 @@ const Landing = () => {
                 aspectRatio: 1.5
                 formats: WEBP
                 placeholder: BLURRED
+                layout: FULL_WIDTH
               )
             }
             name
           }
         }
+      }
+      markdownRemark(frontmatter: { section: { eq: "landing" } }) {
+        frontmatter {
+          header
+          name
+          title
+        }
+        html
       }
     }
   `);
@@ -36,6 +45,8 @@ const Landing = () => {
 
   const BGLight = data.allFile.edges[0].node.childImageSharp.gatsbyImageData;
   const BGDark = data.allFile.edges[1].node.childImageSharp.gatsbyImageData;
+
+  const { header, name, title } = data.markdownRemark.frontmatter;
 
   return (
     <div id="home" className="landing-container">
@@ -54,13 +65,12 @@ const Landing = () => {
       )}
       <div className="content">
         <div className="main">
-          <h4>header</h4>
-          <h1>name</h1>
-          <h2>title</h2>
+          <h4 className="header">{header}</h4>
+          <h1 className={lightTheme ? "name dark" : "name light"}>{name}</h1>
+          <h2 className={lightTheme ? "title dark" : "title light"}>{title}</h2>
+          <Socials />
         </div>
       </div>
-
-      <Skills />
     </div>
   );
 };

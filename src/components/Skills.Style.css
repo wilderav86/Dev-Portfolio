@@ -13,7 +13,7 @@
 .icon-container {
   display: flex;
   flex-direction: column;
-
+  color: rgb(231, 117, 231);
   justify-content: center;
   align-items: center;
   /* height: 75%;

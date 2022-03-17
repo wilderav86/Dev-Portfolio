@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { Container } from "react-bootstrap";
 import { useStaticQuery, graphql } from "gatsby";
-
-import "./About.Style.css";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { ThemeContext } from "../../contexts/ThemeContext";
+import Skills from "../Skills.js";
+
+import "./About.Style.css";
 
 //brief description, technologies used
 
@@ -55,6 +56,7 @@ const About = () => {
       <Container>
         <h1>Adam Wilder</h1>
         <h2>Front end developer</h2>
+        <Skills />
       </Container>
     </div>
   );

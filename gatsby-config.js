@@ -29,6 +29,16 @@ module.exports = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-smoothscroll",
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `montserrat\:400`,
+          `droid sans mono`, // you can also specify font weights and styles
+        ],
+        display: "swap",
+      },
+    },
+    {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {

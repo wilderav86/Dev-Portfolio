@@ -1,0 +1,10 @@
+.socials-container {
+  display: flex;
+
+  border-style: double;
+}
+
+a {
+  justify-self: center;
+  color: rgb(231, 117, 231);
+}
