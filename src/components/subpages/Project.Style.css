@@ -3,10 +3,37 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-evenly;
   min-height: 100vh;
   width: 100vw;
   border-bottom: 10px solid black;
+}
+
+/* .header {
+  color: rgb(231, 117, 231);
+  font-family: "droid sans mono";
+  margin-bottom: 3em;
+
+  font-size: clamp(1rem, 5vw, 2rem);
+
+  display: inline-block;
+
+  text-decoration: none;
+
+  position: relative;
+}
+
+.header.light {
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em rgb(231, 117, 231);
+
+  box-shadow: inset 0 0 0.5em 0 var(rgb(231, 117, 231)),
+    0 0 0.5em 0 var(rgb(231, 117, 231));
+} */
+
+.project-card {
+  /* max-height: 400px; */
+  max-width: 600px;
 }
 
 .backgroundImage {

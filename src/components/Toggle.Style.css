@@ -1,0 +1,10 @@
+.toggle-container {
+  display: flex;
+  background: none;
+}
+
+@media (max-width: 767px) {
+  .toggle-container {
+    transform: translateX(-215px);
+  }
+}

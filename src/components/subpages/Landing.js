@@ -6,8 +6,6 @@ import Socials from "../Socials";
 
 import "./Landing.Style.css";
 
-//brief description, technologies used
-
 const Landing = () => {
   const data = useStaticQuery(graphql`
     query landingQuery {
@@ -19,7 +17,7 @@ const Landing = () => {
           node {
             childImageSharp {
               gatsbyImageData(
-                quality: 50
+                quality: 100
                 aspectRatio: 1.5
                 formats: WEBP
                 placeholder: BLURRED
@@ -41,7 +39,7 @@ const Landing = () => {
     }
   `);
 
-  const [lightTheme, setLightTheme] = useContext(ThemeContext);
+  const [lightTheme] = useContext(ThemeContext);
 
   const BGLight = data.allFile.edges[0].node.childImageSharp.gatsbyImageData;
   const BGDark = data.allFile.edges[1].node.childImageSharp.gatsbyImageData;
@@ -65,9 +63,20 @@ const Landing = () => {
       )}
       <div className="content">
         <div className="main">
-          <h4 className="header">{header}</h4>
-          <h1 className={lightTheme ? "name dark" : "name light"}>{name}</h1>
-          <h2 className={lightTheme ? "title dark" : "title light"}>{title}</h2>
+          <div className="banner">
+            <h4 className={lightTheme ? "header light" : "header"}>{header}</h4>
+            <h1
+              className={
+                lightTheme ? "landing-name dark" : "landing-name light"
+              }
+            >
+              {name}
+            </h1>
+            <h2 className={lightTheme ? "title dark" : "title light"}>
+              {title}
+            </h2>
+          </div>
+
           <Socials />
         </div>
       </div>

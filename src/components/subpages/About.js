@@ -30,6 +30,15 @@ const About = () => {
           }
         }
       }
+      allMarkdownRemark(filter: { frontmatter: { section: { eq: "about" } } }) {
+        nodes {
+          frontmatter {
+            description
+            title
+          }
+          html
+        }
+      }
     }
   `);
 
@@ -37,6 +46,9 @@ const About = () => {
 
   const BGLight = data.allFile.edges[0].node.childImageSharp.gatsbyImageData;
   const BGDark = data.allFile.edges[1].node.childImageSharp.gatsbyImageData;
+
+  const title = data.allMarkdownRemark.nodes[0].frontmatter.title;
+  const body = data.allMarkdownRemark.nodes[0].html;
 
   return (
     <div id="about" className="about-container">
@@ -50,14 +62,22 @@ const About = () => {
         <GatsbyImage
           image={BGDark}
           alt="background image"
-          className="backgroundImage"
+          className="backgroundImage opaque-bg"
         />
       )}
-      <Container>
-        <h1>Adam Wilder</h1>
-        <h2>Front end developer</h2>
+      <div className="about-content">
+        <h2 className="page-title accent-color">{title}</h2>
+        <div
+          className={
+            !lightTheme
+              ? "light-text page-body about-body"
+              : "dark-text page-body about-body"
+          }
+          dangerouslySetInnerHTML={{ __html: body }}
+        />
+
         <Skills />
-      </Container>
+      </div>
     </div>
   );
 };

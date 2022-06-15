@@ -12,3 +12,29 @@ body {
   width: 100vw;
   margin: 0;
 }
+
+.accent-color {
+  color: rgb(243, 183, 71);
+}
+
+.light-text {
+  color: #6f6f6f;
+}
+
+.dark-text {
+  color: aliceblue;
+}
+
+.page-body {
+  font-family: "montserrat";
+  line-height: 180%;
+}
+
+.page-title {
+  font-family: "droid sans mono";
+  border-bottom: 3px solid rgb(243, 183, 71);
+}
+
+.opaque-bg {
+  opacity: 0.3;
+}

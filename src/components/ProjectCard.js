@@ -34,10 +34,7 @@ const ProjectCard = () => {
 
   const [lightTheme, setLightTheme] = useContext(ThemeContext);
 
-  console.log(data.allMarkdownRemark.nodes);
-
   const renderCard = data.allMarkdownRemark.nodes.map((card, id) => {
-    console.log(card);
     const { title, link, gitLink, description } = card.frontmatter;
     const projectImg = card.frontmatter.image.childImageSharp.gatsbyImageData;
 
@@ -46,7 +43,6 @@ const ProjectCard = () => {
         bg={lightTheme ? "dark" : "light"}
         text={lightTheme ? "light" : "dark"}
         key={id}
-        
         className="project-card"
       >
         <Card.Header as="h5">{title}</Card.Header>
@@ -57,20 +53,41 @@ const ProjectCard = () => {
           </div>
 
           <div className="button-container">
-            <IconContext.Provider value={{ size: 40 }}>
-              {lightTheme ? <BsFileCodeFill /> : <BsFileCode />}
-            </IconContext.Provider>
+            <div>
+              <a href={gitLink} className="git-link">
+                {lightTheme ? (
+                  <IconContext.Provider value={{ size: 40, color: "white" }}>
+                    {" "}
+                    <BsFileCodeFill />{" "}
+                  </IconContext.Provider>
+                ) : (
+                  <IconContext.Provider value={{ size: 40, color: "black" }}>
+                    {" "}
+                    <BsFileCode />
+                  </IconContext.Provider>
+                )}
+              </a>
+            </div>
 
-            <Button variant={lightTheme ? "outline-light" : "outline-dark"}>
-              View Site
-            </Button>
+            <div>
+              <a href={link} className="site-link">
+                <Button
+                  type="button"
+                  // href={gitLink}
+                  variant={lightTheme ? "outline-light" : "outline-dark"}
+                  whiteSpace="normal"
+                >
+                  View Site
+                </Button>
+              </a>
+            </div>
           </div>
         </Card.Body>
       </Card>
     );
   });
 
-  return <>{renderCard}</>;
+  return <div className="cards-container">{renderCard}</div>;
 };
 
 export default ProjectCard;

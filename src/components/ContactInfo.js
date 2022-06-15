@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const ContactInfo = () => {
+  const [lightTheme, setLightTheme] = useContext(ThemeContext);
+
   return (
     <div className="info-container">
-      <h2>TELEPHONE</h2>
-      <h3>804.550.8382</h3>
-      <h2>EMAIL</h2>
-      <h2>wilderav86@gmail.com</h2>
+      <h2 className="page-title accent-color">EMAIL</h2>
+      <h2 className={!lightTheme ? "light-text" : "dark-text"}>
+        wilderav86@gmail.com
+      </h2>
     </div>
   );
 };

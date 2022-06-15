@@ -32,8 +32,6 @@ const Projects = () => {
 
   const [lightTheme, setLightTheme] = useContext(ThemeContext);
 
-  console.log(data);
-
   const BGLight = data.allFile.edges[0].node.childImageSharp.gatsbyImageData;
   const BGDark = data.allFile.edges[1].node.childImageSharp.gatsbyImageData;
 
@@ -52,8 +50,8 @@ const Projects = () => {
           className="backgroundImage"
         />
       )}
-      <div className="title">
-        <h2>Projects</h2>
+      <div className="header">
+        <h2>projects</h2>
       </div>
       <ProjectCard />
     </div>

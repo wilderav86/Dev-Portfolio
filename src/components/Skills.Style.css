@@ -1,37 +1,62 @@
+:root {
+  --clr-neon: rgb(243, 183, 71);
+  --clr-bg: hsl(323 21% 16%);
+  --clr-pink: rgb(231, 117, 231);
+}
+
 .skills-container {
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
   height: auto;
   width: 75%;
-  border-radius: 15px;
-  background-color: rgb(228, 168, 208, 0.3);
-  justify-self: flex-end;
+  
+  justify-self: flex-end; */
+}
+
+.icons-group-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .icon-container {
   display: flex;
   flex-direction: column;
-  color: rgb(231, 117, 231);
+  margin: 2rem;
   justify-content: center;
   align-items: center;
+  border-radius: 70px;
+  background-color: rgba(204, 204, 204, 0.5);
+  height: 5rem;
+  width: 5rem;
+  align-self: center;
+
   /* height: 75%;
   width: 75%; */
 }
 
 .icon {
   justify-self: center;
-  height: 2.8rem;
-  width: 2.8rem;
+  height: 2rem;
+  width: 2rem;
+}
+
+.name {
+  font-size: 1rem;
 }
 
 @media only screen and (min-width: 600px) {
-  .skills-container {
-    width: 40%;
+  .icon-container {
+    height: 7rem;
+    width: 7rem;
   }
   .icon {
-    height: 4rem;
-    width: 4rem;
+    height: 3rem;
+    width: 3rem;
   }
 }
