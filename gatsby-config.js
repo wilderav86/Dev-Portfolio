@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Adam Wilder Portfolio`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://www.adamwilder.fun`,
     subPages: [
       {
         page: "Home",
@@ -49,7 +49,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        icon: "src/images/Wicon.jpg",
       },
     },
     "gatsby-transformer-remark",
