@@ -47,11 +47,11 @@ const Projects = () => {
         <GatsbyImage
           image={BGDark}
           alt="background image"
-          className="backgroundImage"
+          className="backgroundImage semi-opaque-bg"
         />
       )}
       <div className="header">
-        <h2>projects</h2>
+        <h2>PROJECTS</h2>
       </div>
       <ProjectCard />
     </div>
