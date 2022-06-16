@@ -6,10 +6,10 @@ const ContactInfo = () => {
 
   return (
     <div className="info-container">
-      <h2 className="page-title accent-color">EMAIL</h2>
-      <h2 className={!lightTheme ? "light-text" : "dark-text"}>
+      <h2 className="email-title accent-color">EMAIL</h2>
+      <h3 className={!lightTheme ? "light-text email" : "dark-text email"}>
         wilderav86@gmail.com
-      </h2>
+      </h3>
     </div>
   );
 };

@@ -39,8 +39,11 @@ const Toggle = () => {
     <div>
       <Form>
         <div className="toggle-container">
-          <div>{!lightTheme ? <BsLightbulbFill /> : <BsLightbulb />}</div>
+          <div className="bulb-icon">
+            {!lightTheme ? <BsLightbulbFill /> : <BsLightbulb />}
+          </div>
           <Form.Check
+            custom
             type="switch"
             id="custom-switch"
             onChange={toggleTheme}

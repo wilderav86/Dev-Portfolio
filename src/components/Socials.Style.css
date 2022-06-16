@@ -52,7 +52,7 @@ a {
 
 .underglow {
   height: 20px;
-  width: 80px;
+  width: 60px;
   background-color: var(--clr-neon);
   transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
   filter: blur(1em);

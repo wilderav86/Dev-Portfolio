@@ -3,6 +3,38 @@
   background: none;
 }
 
+.bulb-icon {
+  margin-left: 5px;
+  margin-right: 6px;
+}
+
+.form-check-input:checked {
+  background-color: rgb(243, 183, 71) !important;
+  border-color: rgb(243, 183, 71) !important;
+}
+
+.form-check-input:focus {
+  border-color: rgb(243, 183, 71) !important;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(243 183 71 / 25%) !important;
+}
+
+/* .form-check-input {
+  background-color: 3px solid rgb(243, 183, 71);
+} */
+
+/* .custom-control-label::before {
+  background-color: #28a745;
+}
+
+.custom-switch .custom-control-label::after {
+  background-color: white;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  background-color: red;
+} */
+
 @media (max-width: 767px) {
   .toggle-container {
     transform: translateX(-215px);

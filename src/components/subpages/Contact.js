@@ -48,10 +48,10 @@ const Contact = () => {
         <GatsbyImage
           image={BGDark}
           alt="background image"
-          className="backgroundImage"
+          className="backgroundImage semi-opaque-bg"
         />
       )}
-      <div className="contact-container">
+      <div className="contact-form-container">
         <ContactForm />
         <ContactInfo />
       </div>

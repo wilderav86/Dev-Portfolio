@@ -7,6 +7,7 @@ import { BsFileCodeFill, BsFileCode } from "react-icons/bs";
 import { IconContext } from "react-icons";
 
 import "./ProjectCard.Style.css";
+import AnimateButton from "../animations/animateButton";
 
 const ProjectCard = () => {
   const data = useStaticQuery(graphql`
@@ -54,32 +55,36 @@ const ProjectCard = () => {
 
           <div className="button-container">
             <div>
-              <a href={gitLink} className="git-link">
-                {lightTheme ? (
-                  <IconContext.Provider value={{ size: 40, color: "white" }}>
-                    {" "}
-                    <BsFileCodeFill />{" "}
-                  </IconContext.Provider>
-                ) : (
-                  <IconContext.Provider value={{ size: 40, color: "black" }}>
-                    {" "}
-                    <BsFileCode />
-                  </IconContext.Provider>
-                )}
-              </a>
+              <AnimateButton>
+                <a href={gitLink} className="git-link">
+                  {lightTheme ? (
+                    <IconContext.Provider value={{ size: 40, color: "white" }}>
+                      {" "}
+                      <BsFileCodeFill />{" "}
+                    </IconContext.Provider>
+                  ) : (
+                    <IconContext.Provider value={{ size: 40, color: "black" }}>
+                      {" "}
+                      <BsFileCode />
+                    </IconContext.Provider>
+                  )}
+                </a>
+              </AnimateButton>
             </div>
 
             <div>
-              <a href={link} className="site-link">
-                <Button
-                  type="button"
-                  // href={gitLink}
-                  variant={lightTheme ? "outline-light" : "outline-dark"}
-                  whiteSpace="normal"
-                >
-                  View Site
-                </Button>
-              </a>
+              <AnimateButton>
+                <a href={link} className="site-link">
+                  <Button
+                    type="button"
+                    // href={gitLink}
+                    variant={lightTheme ? "outline-light" : "outline-dark"}
+                    whitespace="normal"
+                  >
+                    View Site
+                  </Button>
+                </a>
+              </AnimateButton>
             </div>
           </div>
         </Card.Body>
