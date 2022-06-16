@@ -46,11 +46,13 @@ const ProjectCard = () => {
         key={id}
         className="project-card"
       >
-        <Card.Header as="h5">{title}</Card.Header>
+        <Card.Header as="h5" className="page-title accent-color">
+          {title}
+        </Card.Header>
         <Card.Body>
           <GatsbyImage image={projectImg} alt="project image" />
           <div>
-            <Card.Text>{description}</Card.Text>
+            <Card.Text className="card-text">{description}</Card.Text>
           </div>
 
           <div className="button-container">

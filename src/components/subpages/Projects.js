@@ -51,7 +51,7 @@ const Projects = () => {
         />
       )}
       <div className="header">
-        <h2>PROJECTS</h2>
+        <h2 className="projects-header">PROJECTS</h2>
       </div>
       <ProjectCard />
     </div>
