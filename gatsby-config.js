@@ -49,7 +49,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/Wicon.jpg",
+        icon: "src/images/awIcon.svg",
       },
     },
     "gatsby-transformer-remark",
