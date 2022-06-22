@@ -37,6 +37,8 @@
 
 @media (max-width: 767px) {
   .toggle-container {
-    transform: translateX(-215px);
+    /* transform: translateX(-204px); */
+    /* flex-direction: row-reverse;
+    justify-content: flex-end; */
   }
 }

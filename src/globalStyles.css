@@ -42,3 +42,16 @@ body {
 .semi-opaque-bg {
   opacity: 0.6;
 }
+
+/* Scroll Snap index.js */
+
+.scroller {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  overflow: auto;
+}
+
+.scroller section {
+  scroll-snap-align: start;
+}

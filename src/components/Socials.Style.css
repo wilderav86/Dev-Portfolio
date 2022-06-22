@@ -12,6 +12,8 @@
   /* height: 300px; */
   /* width: 80%; */
   /* height: 20%; */
+
+  margin-top: 50px;
 }
 
 a {
@@ -23,8 +25,8 @@ a {
 }
 
 .svg-container {
-  height: 80px;
-  width: 80px;
+  height: 65px;
+  width: 65px;
   margin: 1em 1em;
 }
 
@@ -65,6 +67,13 @@ a {
   .socials-container {
     flex-direction: column;
     width: 20%;
+
     /* height: 30%; */
+  }
+}
+
+@media (min-width: 600px) {
+  .socials-container {
+    transform: translateX(-40px);
   }
 }
