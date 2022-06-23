@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
+import { NavToggleContext } from "../contexts/NavToggleContext";
 import { Nav, Navbar, Container } from "react-bootstrap";
 import { useStaticQuery, graphql } from "gatsby";
 import Toggle from "./Toggle";
 
 import "./Nav.Style.css";
-import FadeInWhenVisible from "../animations/FadeInWhenVisible";
 
 const Navigation = () => {
   const data = useStaticQuery(graphql`
@@ -22,17 +22,21 @@ const Navigation = () => {
   `);
 
   //navbar state
-  const [expanded, setExpanded] = useState(false);
+
   const [lightTheme, setLightTheme] = useContext(ThemeContext);
+  const [navExpanded, setNavExpanded] = useContext(NavToggleContext);
+
+  console.log(navExpanded);
 
   //functions
-  const setToggle = () => {
+  const setOpen = () => {
     console.log("toggled");
-    setExpanded(true);
+    setNavExpanded(true);
   };
 
-  const setClose = () => {
-    setExpanded(false);
+  const setClosed = () => {
+    setNavExpanded(false);
+    console.log("closed");
   };
 
   //data
@@ -64,7 +68,9 @@ const Navigation = () => {
       <Container fluid className="nav-container">
         {/* <div className="nav-container">
             <div className="drop-down"> */}
+
         <Navbar.Toggle aria-controls="navbarScroll" />
+
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0" navbarScroll>
             {renderSubPages}
@@ -101,6 +107,7 @@ const Navigation = () => {
             </div>
           </Navbar.Text>
         </Navbar.Collapse>
+
         {/* </div>
           </div> */}
       </Container>

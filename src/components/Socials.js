@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Adam_Wilder_Resume from "../CV/Adam_Wilder_Resume.pdf";
 import { ThemeContext } from "../contexts/ThemeContext";
 import Cv from "../assets/cv.svg";
+import { motion } from "framer-motion";
 
 import "./Socials.Style.css";
 import { IconContext } from "react-icons";
@@ -11,7 +12,12 @@ const Socials = () => {
   const [lightTheme] = useContext(ThemeContext);
 
   return (
-    <div className="socials-container">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 3 }}
+      className="socials-container"
+    >
       <AnimateButton>
         <a
           href="https://www.linkedin.com/in/adam-wilder-8928381a6/"
@@ -67,7 +73,7 @@ const Socials = () => {
           {/* {lightTheme && <div className="underglow" />} */}
         </a>
       </AnimateButton>
-    </div>
+    </motion.div>
   );
 };
 

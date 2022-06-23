@@ -41,8 +41,10 @@ const Landing = () => {
     }
   `);
 
+  //State
   const [lightTheme] = useContext(ThemeContext);
 
+  //Background and content
   const BGLight = data.allFile.edges[0].node.childImageSharp.gatsbyImageData;
   const BGLightConverted = convertToBgImage(BGLight);
 
@@ -50,6 +52,37 @@ const Landing = () => {
   const BGDarkConverted = convertToBgImage(BGDark);
 
   const { header, name, title } = data.markdownRemark.frontmatter;
+
+  //Animation variants
+
+  const animateContainer = {
+    hidden: {
+      opacity: 0,
+      transition: {
+        when: "afterChildren",
+      },
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        type: "spring",
+        mass: 0.35,
+        stiffness: 75,
+        duration: 0.8,
+        staggerChildren: 0.8,
+      },
+    },
+  };
+
+  const animateHeader = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
+  const animateItem = {
+    hidden: { opacity: 0, x: -200 },
+    visible: { opacity: 1, x: 0 },
+  };
 
   return (
     <div id="home" className="landing-container">
@@ -98,17 +131,36 @@ const Landing = () => {
       <div className="content">
         <div className="main">
           <div className="banner">
-            <h4 className={lightTheme ? "header light" : "header"}>{header}</h4>
-            <h1
-              className={
-                lightTheme ? "landing-name dark" : "landing-name light"
-              }
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={animateContainer}
             >
-              {name}
-            </h1>
-            <h2 className={lightTheme ? "title dark" : "title light"}>
-              {title}
-            </h2>
+              <motion.h4
+                variants={animateHeader}
+                // initial={{ opacity: 0 }}
+                // animate={{ opacity: 1 }}
+                // transition={{ duration: 0.8 }}
+                className={lightTheme ? "header light" : "header"}
+              >
+                {header}
+              </motion.h4>
+
+              <motion.h1
+                variants={animateItem}
+                className={
+                  lightTheme ? "landing-name dark" : "landing-name light"
+                }
+              >
+                {name}
+              </motion.h1>
+              <motion.h2
+                variants={animateItem}
+                className={lightTheme ? "title dark" : "title light"}
+              >
+                {title}
+              </motion.h2>
+            </motion.div>
           </div>
 
           <Socials />

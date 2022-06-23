@@ -18,6 +18,8 @@ const Toggle = () => {
 
   const toggleTheme = () => {
     setLightTheme(!lightTheme);
+
+    console.log("navExpanded");
     localStorage.setItem("lightTheme", !lightTheme);
     localStorage.setItem("switchState", !switchState);
     lightTheme ? setSwitchState(false) : setSwitchState(true);
