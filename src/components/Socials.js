@@ -15,7 +15,7 @@ const Socials = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 3 }}
+      transition={{ duration: 0.5, delay: 2.2 }}
       className="socials-container"
     >
       <AnimateButton>
