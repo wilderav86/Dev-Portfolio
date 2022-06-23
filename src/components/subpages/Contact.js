@@ -2,10 +2,13 @@ import React, { useContext } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { ThemeContext } from "../../contexts/ThemeContext";
-
-import "./Contact.Style.css";
 import ContactForm from "../ContactForm";
 import ContactInfo from "../ContactInfo";
+import { convertToBgImage } from "gbimage-bridge";
+import BackgroundImage from "gatsby-background-image";
+import { AnimatePresence, motion } from "framer-motion";
+
+import "./Contact.Style.css";
 
 const Contact = () => {
   const data = useStaticQuery(graphql`
@@ -18,7 +21,7 @@ const Contact = () => {
           node {
             childImageSharp {
               gatsbyImageData(
-                quality: 50
+                quality: 100
                 aspectRatio: 1.5
                 formats: WEBP
                 placeholder: BLURRED
@@ -34,11 +37,64 @@ const Contact = () => {
   const [lightTheme, setLightTheme] = useContext(ThemeContext);
 
   const BGLight = data.allFile.edges[0].node.childImageSharp.gatsbyImageData;
+  const BGLightConverted = convertToBgImage(BGLight);
+
   const BGDark = data.allFile.edges[1].node.childImageSharp.gatsbyImageData;
+  const BGDarkConverted = convertToBgImage(BGDark);
 
   return (
     <div id="contact" className="contact-container">
-      {lightTheme ? (
+      <AnimatePresence>
+        {lightTheme && (
+          <motion.div
+            className="fade-in"
+            intitial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <BackgroundImage
+              className="landing-backgroundImage"
+              Tag="section"
+              {...BGLightConverted}
+              preserveStackingContext
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {!lightTheme && (
+          <motion.div
+            className="fade-in"
+            intitial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <BackgroundImage
+              className="landing-backgroundImage "
+              Tag="section"
+              {...BGDarkConverted}
+              preserveStackingContext
+            />
+          </motion.div>
+          // <GatsbyImage
+          //   image={BGDark}
+          //   alt="background image"
+          //   className="backgroundImage"
+          // />
+        )}
+      </AnimatePresence>
+      <div className="contact-form-container">
+        <ContactForm />
+        <ContactInfo />
+      </div>
+    </div>
+  );
+};
+
+{
+  /* {lightTheme ? (
         <GatsbyImage
           image={BGLight}
           alt="background image"
@@ -50,13 +106,7 @@ const Contact = () => {
           alt="background image"
           className="backgroundImage semi-opaque-bg"
         />
-      )}
-      <div className="contact-form-container">
-        <ContactForm />
-        <ContactInfo />
-      </div>
-    </div>
-  );
-};
+      )} */
+}
 
 export default Contact;

@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import Socials from "../Socials";
+import { convertToBgImage } from "gbimage-bridge";
+import BackgroundImage from "gatsby-background-image";
+import { AnimatePresence, motion } from "framer-motion";
 
 import "./Landing.Style.css";
 
@@ -21,7 +23,7 @@ const Landing = () => {
                 aspectRatio: 1.5
                 formats: WEBP
                 placeholder: BLURRED
-                layout: FULL_WIDTH
+                layout: CONSTRAINED
               )
             }
             name
@@ -42,25 +44,57 @@ const Landing = () => {
   const [lightTheme] = useContext(ThemeContext);
 
   const BGLight = data.allFile.edges[0].node.childImageSharp.gatsbyImageData;
+  const BGLightConverted = convertToBgImage(BGLight);
+
   const BGDark = data.allFile.edges[1].node.childImageSharp.gatsbyImageData;
+  const BGDarkConverted = convertToBgImage(BGDark);
 
   const { header, name, title } = data.markdownRemark.frontmatter;
 
   return (
     <div id="home" className="landing-container">
-      {lightTheme ? (
-        <GatsbyImage
-          image={BGLight}
-          alt="background image"
-          className="backgroundImage"
-        />
-      ) : (
-        <GatsbyImage
-          image={BGDark}
-          alt="background image"
-          className="backgroundImage"
-        />
-      )}
+      <AnimatePresence>
+        {lightTheme && (
+          <motion.div
+            className="fade-in"
+            intitial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <BackgroundImage
+              className="landing-backgroundImage"
+              Tag="section"
+              {...BGLightConverted}
+              preserveStackingContext
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {!lightTheme && (
+          <motion.div
+            className="fade-in"
+            intitial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <BackgroundImage
+              className="landing-backgroundImage"
+              Tag="section"
+              {...BGDarkConverted}
+              preserveStackingContext
+            />
+          </motion.div>
+          // <GatsbyImage
+          //   image={BGDark}
+          //   alt="background image"
+          //   className="backgroundImage"
+          // />
+        )}
+      </AnimatePresence>
+
       <div className="content">
         <div className="main">
           <div className="banner">

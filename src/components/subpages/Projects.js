@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
 import { ThemeContext } from "../../contexts/ThemeContext";
+import { convertToBgImage } from "gbimage-bridge";
+import BackgroundImage from "gatsby-background-image";
+import { AnimatePresence, motion } from "framer-motion";
 
 import "./Project.Style.css";
 import ProjectCard from "../ProjectCard";
@@ -33,23 +35,50 @@ const Projects = () => {
   const [lightTheme, setLightTheme] = useContext(ThemeContext);
 
   const BGLight = data.allFile.edges[0].node.childImageSharp.gatsbyImageData;
+  const BGLightConverted = convertToBgImage(BGLight);
+
   const BGDark = data.allFile.edges[1].node.childImageSharp.gatsbyImageData;
+  const BGDarkConverted = convertToBgImage(BGDark);
 
   return (
     <div id="projects" className="projects-container">
-      {lightTheme ? (
-        <GatsbyImage
-          image={BGLight}
-          alt="background image"
-          className="backgroundImage"
-        />
-      ) : (
-        <GatsbyImage
-          image={BGDark}
-          alt="background image"
-          className="backgroundImage semi-opaque-bg"
-        />
-      )}
+      <AnimatePresence>
+        {lightTheme && (
+          <motion.div
+            className="fade-in"
+            intitial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <BackgroundImage
+              className="landing-backgroundImage"
+              Tag="section"
+              {...BGLightConverted}
+              preserveStackingContext
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {!lightTheme && (
+          <motion.div
+            className="fade-in"
+            intitial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <BackgroundImage
+              className="landing-backgroundImage semi-opaque-bg"
+              Tag="section"
+              {...BGDarkConverted}
+              preserveStackingContext
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <div className="header">
         <h2 className="projects-header">PROJECTS</h2>
       </div>

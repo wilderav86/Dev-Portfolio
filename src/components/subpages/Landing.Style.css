@@ -9,14 +9,17 @@
   border-bottom: 10px solid black;
 }
 
-.backgroundImage {
-  /* height: 100%;
-  width: 100%; */
+.landing-backgroundImage {
+  height: 100%;
+  width: 100vw;
   max-height: 1000;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-position: top right;
-  position: absolute !important;
+  position: static !important;
   z-index: -1;
+  object-fit: cover;
 }
 
 .main {

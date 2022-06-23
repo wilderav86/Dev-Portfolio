@@ -10,22 +10,22 @@ const FadeInWhenVisible = ({ children }) => {
     if (inView) {
       controls.start("visible");
     }
-    if (!inView) {
-      controls.start("hidden");
-    }
+    // if (!inView) {
+    //   controls.start("hidden");
+    // }
   }, [controls, inView]);
 
   return (
     <motion.div
+      className="fade-in"
       ref={ref}
       animate={controls}
       initial="hidden"
       transition={{ duration: 0.6 }}
       variants={{
-        visible: { opacity: 1, y: 0 },
+        visible: { opacity: 1 },
         hidden: {
           opacity: 0,
-          y: 100,
         },
       }}
     >

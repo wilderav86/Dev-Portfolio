@@ -55,3 +55,12 @@ body {
 .scroller section {
   scroll-snap-align: start;
 }
+
+/* animations */
+
+.fade-in {
+  /* max-height: 1000; */
+  object-fit: cover;
+  background-position: top right;
+  /* position: absolute !important; */
+}
