@@ -19,7 +19,7 @@ const IndexPage = () => {
         <div className="app">
           <Helmet>
             <title>Adam Wilder</title>
-            <link rel="canonical" href="http://www.adamwilder.fun" />
+            <link rel="canonical" href="https://www.adamwilder.fun" />
           </Helmet>
           <Navigation />
           <Landing />
