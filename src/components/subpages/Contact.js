@@ -85,7 +85,13 @@ const Contact = () => {
           // />
         )}
       </AnimatePresence>
-      <div className="contact-form-container">
+      <div
+        className={
+          !lightTheme
+            ? "contact-form-container container-light"
+            : "contact-form-container"
+        }
+      >
         <ContactForm />
         <ContactInfo />
       </div>

@@ -22,8 +22,15 @@
   justify-content: space-between;
   max-width: 70%;
 
-  margin-top: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  padding: 3rem;
 }
+
+/* .container-light {
+  background-color: rgba(243, 243, 243, 0.7);
+  border-radius: 2rem;
+} */
 
 .about-body {
   margin-top: 2rem;
@@ -33,7 +40,8 @@
 
 @media (max-width: 600px) {
   .about-content {
-    max-width: 80%;
+    max-width: 90%;
+    padding: 1rem;
   }
 
   .about-body {

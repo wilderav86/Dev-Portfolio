@@ -50,6 +50,7 @@ module.exports = {
       resolve: "gatsby-plugin-manifest",
       options: {
         icon: "src/images/awIcon.svg",
+        name: "Adam Wilder",
       },
     },
     "gatsby-transformer-remark",

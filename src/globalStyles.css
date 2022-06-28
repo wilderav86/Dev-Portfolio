@@ -64,3 +64,11 @@ body {
   background-position: top right;
   /* position: absolute !important; */
 }
+
+/* Light mode containers */
+
+.container-light {
+  background-color: rgba(243, 243, 243, 0.7);
+  border-radius: 2rem;
+  box-shadow: 0 0 5px rgba(10, 10, 10, 0.4);
+}

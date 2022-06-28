@@ -19,7 +19,7 @@ const Landing = () => {
           node {
             childImageSharp {
               gatsbyImageData(
-                quality: 100
+                quality: 60
                 aspectRatio: 1.5
                 formats: WEBP
                 placeholder: BLURRED
@@ -120,11 +120,6 @@ const Landing = () => {
               preserveStackingContext
             />
           </motion.div>
-          // <GatsbyImage
-          //   image={BGDark}
-          //   alt="background image"
-          //   className="backgroundImage"
-          // />
         )}
       </AnimatePresence>
 
@@ -138,9 +133,6 @@ const Landing = () => {
             >
               <motion.h4
                 variants={animateHeader}
-                // initial={{ opacity: 0 }}
-                // animate={{ opacity: 1 }}
-                // transition={{ duration: 0.8 }}
                 className={lightTheme ? "header light" : "header"}
               >
                 {header}

@@ -21,7 +21,7 @@ const About = () => {
           node {
             childImageSharp {
               gatsbyImageData(
-                quality: 100
+                quality: 80
                 aspectRatio: 1.5
                 formats: WEBP
                 placeholder: BLURRED
@@ -85,7 +85,7 @@ const About = () => {
             transition={{ duration: 0.5 }}
           >
             <BackgroundImage
-              className="landing-backgroundImage opaque-bg"
+              className="landing-backgroundImage"
               Tag="section"
               {...BGDarkConverted}
               preserveStackingContext
@@ -93,7 +93,11 @@ const About = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      <div className="about-content">
+      <div
+        className={
+          !lightTheme ? "about-content container-light" : "about-content"
+        }
+      >
         <h2 className="page-title accent-color">{title}</h2>
         <div
           className={

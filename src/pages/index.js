@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Helmet } from "react-helmet";
 import Landing from "../components/subpages/Landing";
 import Projects from "../components/subpages/Projects";
 import About from "../components/subpages/About";
@@ -16,6 +17,10 @@ const IndexPage = () => {
     <ThemeContextProvider>
       <NavToggleContextProvider>
         <div className="app">
+          <Helmet>
+            <title>Adam Wilder</title>
+            <link rel="canonical" href="http://www.adamwilder.fun" />
+          </Helmet>
           <Navigation />
           <Landing />
           <Projects />

@@ -48,8 +48,10 @@ a {
   filter: drop-shadow(0 0 00.2em rgb(243, 183, 71));
 }
 
-.neon-button:hover {
-  filter: drop-shadow(0 0.5rem 00.5em rgb(243, 183, 71));
+@media (hover: hover) {
+  .neon-button:hover {
+    filter: drop-shadow(0 0.5rem 00.5em rgb(243, 183, 71));
+  }
 }
 
 .underglow {

@@ -50,7 +50,7 @@
   color: rgb(243, 183, 71);
   font-family: "droid sans mono";
   margin-bottom: 3em;
-
+  font-weight: bold;
   font-size: clamp(1rem, 5vw, 2rem);
 
   display: inline-block;
@@ -58,6 +58,13 @@
   text-decoration: none;
 
   position: relative;
+}
+
+.header.dark {
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em rgb(243, 183, 71);
+
+  box-shadow: inset 0 0 0.5em 0 var(rgb(19, 14, 6)),
+    0 0 0.5em 0 var(rgb(20, 15, 6));
 }
 
 .header.light {
