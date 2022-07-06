@@ -58,7 +58,19 @@ const ProjectCard = () => {
           <div className="button-container">
             <div>
               <AnimateButton>
-                <a href={gitLink} className="git-link">
+                <AnimateButton>
+                  <a href={gitLink} className="site-link">
+                    <Button
+                      type="button"
+                      // href={gitLink}
+                      variant={lightTheme ? "outline-light" : "outline-dark"}
+                      whitespace="normal"
+                    >
+                      View Code
+                    </Button>
+                  </a>
+                </AnimateButton>
+                {/* <a href={gitLink} className="git-link">
                   {lightTheme ? (
                     <IconContext.Provider value={{ size: 40, color: "white" }}>
                       {" "}
@@ -70,7 +82,7 @@ const ProjectCard = () => {
                       <BsFileCode />
                     </IconContext.Provider>
                   )}
-                </a>
+                </a> */}
               </AnimateButton>
             </div>
 

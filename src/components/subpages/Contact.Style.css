@@ -73,10 +73,16 @@
 
 @media (max-width: 600px) {
   .contact-form-container {
-    width: 90%;
+    width: 95%;
   }
 
   .ui-form {
     max-width: 80vw;
+  }
+
+  .email {
+    font-size: 1rem;
+    margin-left: 10px;
+    padding-bottom: -5px;
   }
 }
