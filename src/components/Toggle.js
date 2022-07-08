@@ -27,12 +27,12 @@ const Toggle = () => {
 
   useEffect(() => {
     localStorage.getItem("lightTheme");
-    localStorage.lightTheme === "false"
+    localStorage.lightTheme === "true"
       ? setLightTheme(true)
       : setLightTheme(false);
 
     localStorage.getItem("switchState");
-    localStorage.switchState === "false"
+    localStorage.switchState === "true"
       ? setSwitchState(true)
       : setSwitchState(false);
   }, []);
