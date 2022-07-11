@@ -51,6 +51,7 @@ module.exports = {
       options: {
         icon: "src/images/awIcon.svg",
         name: "Adam Wilder",
+        start_url: `/`,
       },
     },
     "gatsby-transformer-remark",
