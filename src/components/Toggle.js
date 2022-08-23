@@ -41,7 +41,7 @@ const Toggle = () => {
     <div>
       <Form>
         <div className="toggle-container">
-          <div className="bulb-icon">
+          <div className={lightTheme ? "bulb-icon dark-text" : "bulb-icon "}>
             {!lightTheme ? <BsLightbulbFill /> : <BsLightbulb />}
           </div>
           <Form.Check
@@ -51,7 +51,7 @@ const Toggle = () => {
             onChange={toggleTheme}
             checked={switchState}
           />
-          <div>
+          <div className={lightTheme ? "bulb-icon dark-text" : "bulb-icon "}>
             {!lightTheme ? <BsLightbulbOffFill /> : <BsLightbulbOff />}{" "}
           </div>
         </div>

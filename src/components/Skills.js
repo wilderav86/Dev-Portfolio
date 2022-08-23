@@ -4,6 +4,7 @@ import Bootstrap from "../assets/bootstrap.svg";
 import Css from "../assets/Css.svg";
 import Gatsby from "../assets/gatsby.svg";
 import Graphql from "../assets/graphql.svg";
+import Sass from "../assets/sass.svg";
 import Html5 from "../assets/html5.svg";
 import Javascript from "../assets/javascript.svg";
 import ReactIcon from "../assets/reacticon.svg";
@@ -23,6 +24,7 @@ const Skills = () => {
     { component: <Gatsby />, name: "Gatsby" },
     { component: <Nextjs />, name: "NextJs" },
     { component: <Graphql />, name: "GraphQL" },
+    { component: <Sass />, name: "Sass" },
   ];
 
   const renderIcons = icons.map((icon, id) => {

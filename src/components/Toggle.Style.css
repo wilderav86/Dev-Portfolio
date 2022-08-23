@@ -1,11 +1,15 @@
 .toggle-container {
   display: flex;
+  justify-content: center;
   background: none;
 }
 
+.form-switch {
+}
+
 .bulb-icon {
-  margin-left: 5px;
-  margin-right: 6px;
+  /* margin-left: 0.3rem;
+  margin-right: 0.3rem; */
 }
 
 .form-check-input:checked {

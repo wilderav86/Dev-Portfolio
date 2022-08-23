@@ -14,6 +14,7 @@ const ProjectCard = () => {
     query projectCardQuery {
       allMarkdownRemark(
         filter: { frontmatter: { section: { eq: "projects" } } }
+        sort: { fields: id }
       ) {
         nodes {
           frontmatter {
@@ -38,7 +39,7 @@ const ProjectCard = () => {
   const renderCard = data.allMarkdownRemark.nodes.map((card, id) => {
     const { title, link, gitLink, description } = card.frontmatter;
     const projectImg = card.frontmatter.image.childImageSharp.gatsbyImageData;
-
+    console.log(card);
     return (
       <Card
         bg={lightTheme ? "dark" : "light"}
@@ -70,19 +71,6 @@ const ProjectCard = () => {
                     </Button>
                   </a>
                 </AnimateButton>
-                {/* <a href={gitLink} className="git-link">
-                  {lightTheme ? (
-                    <IconContext.Provider value={{ size: 40, color: "white" }}>
-                      {" "}
-                      <BsFileCodeFill />{" "}
-                    </IconContext.Provider>
-                  ) : (
-                    <IconContext.Provider value={{ size: 40, color: "black" }}>
-                      {" "}
-                      <BsFileCode />
-                    </IconContext.Provider>
-                  )}
-                </a> */}
               </AnimateButton>
             </div>
 
