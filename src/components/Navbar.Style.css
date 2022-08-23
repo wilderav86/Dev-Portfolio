@@ -178,13 +178,17 @@ a {
   }
 
   .navbarLink {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
 
 @media only screen and (max-width: 480px) {
   .chunk-container {
     display: none;
+  }
+
+  .toggle-text-container {
+    padding-left: 1rem;
   }
 }
 
