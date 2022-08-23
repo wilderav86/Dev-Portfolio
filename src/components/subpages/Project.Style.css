@@ -38,7 +38,7 @@
 
 @media (max-width: 2499px) {
   .cards-container {
-    /* max-width: 80%; */
+    max-width: 80%;
   }
 }
 
