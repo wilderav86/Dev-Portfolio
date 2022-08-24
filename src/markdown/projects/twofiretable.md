@@ -5,5 +5,5 @@ gitLink: https://github.com/wilderav86/Two-Fire-Table
 link: https://www.twofiretable.com
 section: projects
 image: "../../images/twofiretablescreenshot.png"
-order: 2
+order: "2"
 ---

@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import Bootstrap from "../assets/bootstrap.svg";
-import Css from "../assets/Css.svg";
 import Gatsby from "../assets/gatsby.svg";
 import Graphql from "../assets/graphql.svg";
 import Sass from "../assets/sass.svg";
-import Html5 from "../assets/html5.svg";
 import Javascript from "../assets/javascript.svg";
 import ReactIcon from "../assets/reacticon.svg";
 import Nextjs from "../assets/nextjs.svg";
@@ -16,11 +14,9 @@ const Skills = () => {
   const [lightTheme, setLightTheme] = useContext(ThemeContext);
 
   const icons = [
-    // { component: <Html5 />, name: "HTML" },
-    // { component: <Css />, name: "CSS" },
     { component: <Javascript />, name: "Javascript" },
     { component: <ReactIcon />, name: "React" },
-    // { component: <Bootstrap />, name: "Bootstrap" },
+    { component: <Bootstrap />, name: "Bootstrap" },
     { component: <Gatsby />, name: "Gatsby" },
     { component: <Nextjs />, name: "NextJs" },
     { component: <Graphql />, name: "GraphQL" },

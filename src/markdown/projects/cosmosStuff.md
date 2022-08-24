@@ -5,5 +5,5 @@ gitLink: https://github.com/wilderav86/cosmosstuff
 link: https://www.spacejunk.me/
 section: projects
 image: "../../images/www.spacejunk.me_.png"
-order: 3
+order: "3"
 ---

@@ -36,7 +36,7 @@
   }
 }
 
-@media (max-width: 2499px) {
+@media (min-width: 2499px) {
   .cards-container {
     max-width: 80%;
   }

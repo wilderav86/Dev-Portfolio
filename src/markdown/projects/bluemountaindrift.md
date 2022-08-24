@@ -5,5 +5,5 @@ gitLink: https://github.com/wilderav86/Blue-Mountain-Drift
 link: https://www.bluemountaindriftflyfishing.com
 section: projects
 image: "../../images/blueMountainDriftScreenshot.png"
-order: 1
+order: "1"
 ---
