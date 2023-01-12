@@ -51,7 +51,11 @@ const ProjectCard = () => {
           {title}
         </Card.Header>
         <Card.Body>
-          <GatsbyImage image={projectImg} alt="project image" />
+          <GatsbyImage
+            className="card-image"
+            image={projectImg}
+            alt="project image"
+          />
           <div>
             <Card.Text className="card-text">{description}</Card.Text>
           </div>
@@ -60,7 +64,7 @@ const ProjectCard = () => {
             <div>
               <AnimateButton>
                 <AnimateButton>
-                  <a href={gitLink} className="site-link">
+                  <a href={gitLink} className="site-link" target="_blank">
                     <Button
                       type="button"
                       // href={gitLink}
@@ -76,7 +80,7 @@ const ProjectCard = () => {
 
             <div>
               <AnimateButton>
-                <a href={link} className="site-link">
+                <a href={link} className="site-link" target="_blank">
                   <Button
                     type="button"
                     // href={gitLink}

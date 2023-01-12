@@ -27,6 +27,10 @@
   padding: 10px;
 }
 
+.card-image {
+  height: 50%;
+}
+
 /* .btn {
   height: 3.5rem;
 } */
